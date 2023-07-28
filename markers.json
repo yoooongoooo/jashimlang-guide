@@ -1,0 +1,30 @@
+[
+    {
+        "lat": 33.4078574,
+        "lng": 126.873878,
+        "name": "행복한 밥상",
+        "category": "한식",
+        "address": "제주 서귀포시 성산읍 난고로 470 1층",
+        "tel": "0507-1363-2720",
+        "website": "https://naver.me/5VeldFSU"
+    },
+    {
+        "lat": 35.1532097,
+        "lng": 128.702824,
+        "name": "벚꽃연어&스시",
+        "category": "일식당",
+        "address": "경상남도 창원시 진해구 석동로30번길 16 1층",
+        "tel": "0507-1348-5927",
+        "website": "https://naver.me/Ggeyjypn"
+    },
+    {
+        "lat": 36.6312505,
+        "lng": 127.503784,
+        "name": "피자헛 금천광장점",
+        "category": "피자",
+        "address": "충북 청주시 상당구 산성로98번길 8-1",
+        "tel": "043-285-5588",
+        "website": "https://naver.me/xzcnw9JJ"
+    }
+
+]
