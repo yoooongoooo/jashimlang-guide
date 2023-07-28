@@ -38,18 +38,18 @@ html, body, #map-container {
 
 /* 정보창 내부에 대한 스타일 설정 */
 .iw_inner {
-    padding: 10px;
-    padding-bottom: 20px; /* 하단 패딩 추가 */
-    padding-left: 20px; /* 좌측 패딩 추가 */
-    padding-right: 20px; /* 우측 패딩 추가 */
+    
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 10px;
 }
 
 /* 정보창 제목에 대한 스타일 설정 */
 .iw_inner h3 {
-    font-size: 1.5em; /* 폰트 크기 설정 */
+    margin: 5px 0;
+    font-size: 1.3em; /* 폰트 크기 설정 */
     font-weight: 700; /* 폰트 두께 설정 */
     color: #007bff;
-    text-align: center; /* 텍스트 가운데 정렬 */
 }
 
 /* 레이블과 값에 대한 스타일 설정 */
@@ -58,10 +58,10 @@ html, body, #map-container {
     line-height: 1.5; /* 행간 설정 */
 }
 
-/* 레이블의 너비 설정 */
 .iw_inner .label {
-    width: 80px;
+    width: 55px;
 }
+
 
 /* 복사 텍스트에 대한 스타일 설정 */
 .iw_inner .copy {
@@ -69,22 +69,4 @@ html, body, #map-container {
     color: #007bff;
     cursor: pointer;
     margin-left: 5px;
-}
-
-/* 화면 너비가 480px 이하일 때 적용할 스타일 */
-@media screen and (max-width: 480px) {
-    /* 정보창 제목의 폰트 크기를 더 크게 설정 */
-    .iw_inner h3 {
-        font-size: 2em;
-    }
-
-    /* 레이블과 값의 폰트 크기를 더 크게 설정 */
-    .iw_inner .label, .iw_inner .value {
-        font-size: 1.2em;
-    }
-
-    /* 복사 텍스트의 폰트 크기를 더 크게 설정 */
-    .iw_inner .copy {
-        font-size: 1em;
-    }
 }

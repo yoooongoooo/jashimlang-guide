@@ -31,13 +31,13 @@ fetch('markers.json')
             // 정보창의 내용 생성
             var contentString = [
                 '<div class="iw_inner">',
-                '   <h3>' + markerInfo.name + '</h3>',
-                '   <div><span class="label"><strong>업종</strong></span> <span class="value">' + markerInfo.category + '</span></div>',
-                '   <div><span class="label"><strong>주소</strong></span> <span id="address' + i + '" class="value">' + markerInfo.address + '</span>',
-                '       <span class="copy" onclick="copyToClipboard(\'address' + i + '\')">복사</span></div>',
-                '   <div><span class="label"><strong>전화번호</strong></span> <span class="value">' + markerInfo.tel + '</span></div>',
-                '   <div><span class="label"><strong>플레이스</strong></span> <span class="value"><a href="' + markerInfo.website + '" target="_blank">바로가기</a></span></div>',
-                '</div>'
+'   <h3>' + markerInfo.name + '</h3>',
+'   <div class="item"><span class="label"><strong>업종</strong></span><span class="value">' + markerInfo.category + '</span></div>',
+'   <div class="item"><span class="label"><strong>주소</strong></span><span id="address' + i + '" class="value">' + markerInfo.address + '</span>',
+'       <span class="copy" onclick="copyToClipboard(\'address' + i + '\')">복사</span></div>',
+'   <div class="item"><span class="label"><strong>전화번호</strong></span><span class="value">' + markerInfo.tel + '</span></div>',
+'   <div class="item"><span class="label"><strong>플레이스</strong></span><span class="value"><a href="' + markerInfo.website + '" target="_blank">바로가기</a></span></div>',
+'</div>'
             ].join('');
             
 
