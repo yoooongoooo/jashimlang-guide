@@ -47,8 +47,8 @@ html, body, #map-container {
 /* 정보창 제목에 대한 스타일 설정 */
 .iw_inner h3 {
     margin: 5px 0;
-    font-size: 1.3em; /* 폰트 크기 설정 */
-    font-weight: 700; /* 폰트 두께 설정 */
+    font-size: 1.5em; /* 폰트 크기 설정 */
+    font-weight: 800; /* 폰트 두께 설정 */
     color: #007bff;
 }
 
