@@ -70,3 +70,21 @@ html, body, #map-container {
     cursor: pointer;
     margin-left: 5px;
 }
+
+/* 화면 너비가 480px 이하일 때 적용할 스타일 */
+@media screen and (max-width: 480px) {
+    /* 정보창 제목의 폰트 크기를 더 크게 설정 */
+    .iw_inner h3 {
+        font-size: 2em;
+    }
+
+    /* 레이블과 값의 폰트 크기를 더 크게 설정 */
+    .iw_inner .label, .iw_inner .value {
+        font-size: 1.2em;
+    }
+
+    /* 복사 텍스트의 폰트 크기를 더 크게 설정 */
+    .iw_inner .copy {
+        font-size: 1em;
+    }
+}
