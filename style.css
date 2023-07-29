@@ -42,6 +42,7 @@ html, body, #map-container {
         font-size: 14px;
         line-height: 1.5;
         padding: 10px;
+        max-width: 350px;
 }
 
 /* 정보창 제목에 대한 스타일 설정 */
