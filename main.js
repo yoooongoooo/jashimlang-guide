@@ -23,6 +23,7 @@ fetch('markers.json')
                 icon: { // 빨간색 마커 이미지를 사용하도록 아이콘 설정
                     url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png', // 빨간색 마커 이미지의 URL을 지정
                     size: new naver.maps.Size(30, 50),
+                    scaledSize: new naver.maps.Size(30, 50),
                     origin: new naver.maps.Point(0, 0),
                     anchor: new naver.maps.Point(15, 48)
                 }
