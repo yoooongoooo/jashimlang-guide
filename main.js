@@ -88,15 +88,6 @@ function copyToClipboard(id) {
 }
 
 
-document.documentElement.addEventListener('touchstart', function (event) {
-    if (event.touches.length > 1) {
-      event.preventDefault();
-    }
-}, false);
-
-
-
-
 
 // 지도의 확대/축소 레벨이 변경될 때마다 마커의 크기 조절
 naver.maps.Event.addListener(map, 'zoom_changed', function(zoom) {
