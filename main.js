@@ -10,24 +10,30 @@ var mapOptions = {
 // 지도 생성
 var map = new naver.maps.Map('map', mapOptions);
 
+// 마커를 저장할 변수
+var markers = [];
+
 // 마커 정보를 가져오는 fetch 함수
 fetch('markers.json')
     .then(response => response.json())
-    .then(markers => {
+    .then(markerInfos => {
         var currentInfoWindow = null;
 
-        markers.forEach((markerInfo, i) => {
+        markerInfos.forEach((markerInfo, i) => {
             var marker = new naver.maps.Marker({
                 position: new naver.maps.LatLng(markerInfo.lat, markerInfo.lng),
                 map: map,
-                icon: { // 빨간색 마커 이미지를 사용하도록 아이콘 설정
-                    url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png', // 빨간색 마커 이미지의 URL을 지정
+                icon: {
+                    url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
                     size: new naver.maps.Size(40, 40),
                     scaledSize: new naver.maps.Size(40, 40),
                     origin: new naver.maps.Point(0, 0),
                     anchor: new naver.maps.Point(15, 48)
                 }
             });
+
+            // 마커를 배열에 추가
+            markers.push(marker);
 
             // 정보창의 내용 생성
             var contentString = [
@@ -92,37 +98,13 @@ document.documentElement.addEventListener('touchstart', function (event) {
 
 
 
-
-
-
-// 'pinchend' 이벤트를 위한 리스너를 추가합니다.
-// 사용자가 핀치 제스처를 종료할 때 이벤트가 발생합니다.
-naver.maps.Event.addListener(map, 'pinchend', function() {
-    // 기존 마커를 삭제합니다.
-    marker.setMap(null);
-
-    // 기존 정보창을 삭제합니다.
-    infoWindow.close();
-
-    // 마커와 정보창을 새로 생성하고 지도에 추가합니다.
-    marker = new naver.maps.Marker({
-        position: position,
-        map: map,
-        icon: {
-            url: './img/ico_pin.jpg',
-            size: new naver.maps.Size(40, 40),  // 원래 이미지 크기
-            scaledSize: new naver.maps.Size(40, 40),  // 레티나 디스플레이를 위해 스케일을 반으로 줄입니다.
-            origin: new naver.maps.Point(0, 0),
-            anchor: new naver.maps.Point(12, 34)
-        }
+// 지도의 확대/축소 레벨이 변경될 때마다 마커의 크기 조절
+naver.maps.Event.addListener(map, 'zoom_changed', function(zoom) {
+    markers.forEach(function(marker) {
+        var icon = marker.getIcon();
+        var size = Math.max(10, 40 - 2 * (zoom - 8));  // 적절한 크기 계산
+        icon.size = new naver.maps.Size(size, size);
+        icon.scaledSize = new naver.maps.Size(size, size);
+        marker.setIcon(icon);
     });
-
-    // 정보창을 생성합니다.
-    infoWindow = new naver.maps.InfoWindow({
-        position: position,
-        content: content,
-    });
-
-    // 새로 생성한 정보창을 엽니다.
-    infoWindow.open(map, marker);
 });
