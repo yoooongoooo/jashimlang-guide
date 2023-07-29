@@ -22,8 +22,8 @@ fetch('markers.json')
                 map: map,
                 icon: { // 빨간색 마커 이미지를 사용하도록 아이콘 설정
                     url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png', // 빨간색 마커 이미지의 URL을 지정
-                    size: new naver.maps.Size(30, 40),
-                    scaledSize: new naver.maps.Size(30, 40),
+                    size: new naver.maps.Size(50, 50),
+                    scaledSize: new naver.maps.Size(50, 50),
                     origin: new naver.maps.Point(0, 0),
                     anchor: new naver.maps.Point(15, 48)
                 }
@@ -80,3 +80,21 @@ function copyToClipboard(id) {
         alert('복사 실패: ' + error);
     });
 }
+
+
+naver.maps.Event.addListener(map, 'pinchend', function() {
+    // marker와 infowindow 객체가 이미 생성되었다고 가정합니다.
+
+    // marker를 재설정합니다.
+    marker.setIcon({
+        url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png', // 빨간색 마커 이미지의 URL을 지정
+        size: new naver.maps.Size(50, 50),
+        scaledSize: new naver.maps.Size(50, 50),
+        origin: new naver.maps.Point(0, 0),
+        anchor: new naver.maps.Point(15, 48)
+    });
+
+    // infowindow를 재설정합니다.
+    infowindow.setContent(/* 새로운 내용 */);
+    infowindow.open(map, marker);
+});
