@@ -87,3 +87,42 @@ document.documentElement.addEventListener('touchstart', function (event) {
       event.preventDefault();
     }
 }, false);
+
+
+
+
+
+
+
+
+// 'pinchend' 이벤트를 위한 리스너를 추가합니다.
+// 사용자가 핀치 제스처를 종료할 때 이벤트가 발생합니다.
+naver.maps.Event.addListener(map, 'pinchend', function() {
+    // 기존 마커를 삭제합니다.
+    marker.setMap(null);
+
+    // 기존 정보창을 삭제합니다.
+    infoWindow.close();
+
+    // 마커와 정보창을 새로 생성하고 지도에 추가합니다.
+    marker = new naver.maps.Marker({
+        position: position,
+        map: map,
+        icon: {
+            url: './img/ico_pin.jpg',
+            size: new naver.maps.Size(40, 40),  // 원래 이미지 크기
+            scaledSize: new naver.maps.Size(40, 40),  // 레티나 디스플레이를 위해 스케일을 반으로 줄입니다.
+            origin: new naver.maps.Point(0, 0),
+            anchor: new naver.maps.Point(12, 34)
+        }
+    });
+
+    // 정보창을 생성합니다.
+    infoWindow = new naver.maps.InfoWindow({
+        position: position,
+        content: content,
+    });
+
+    // 새로 생성한 정보창을 엽니다.
+    infoWindow.open(map, marker);
+});
