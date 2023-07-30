@@ -81,5 +81,16 @@
         "website": "https://naver.me/xpPOjULU"
     }
 
+    ,
+
+    {
+        "lat": 35.869515460843374,
+        "lng": 128.62280848161458,
+        "name": "언앨리",
+        "category": "디저트 카페",
+        "address": "대구 동구 국채보상로171길 46",
+        "tel": "0507-1411-6226",
+        "website": "https://naver.me/Ft8kzTd8"
+    }
 
 ]
